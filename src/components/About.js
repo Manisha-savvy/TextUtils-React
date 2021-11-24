@@ -1,29 +1,31 @@
 import React, {useState} from 'react'
 
-export default function About() {
-    const [myStyle, setmyStyle] = useState({
-        color: 'white',
-        backgroundColor: 'black'
-})
+export default function About(props) {
+    // const [myStyle, setmyStyle] = useState({
+    // })
+    let myStyle={
+        color: props.mode==='dark'? 'white':'black',
+        backgroundColor: props.mode==='dark'? 'black':'white'
+    }
 
-        const [btnText, setBtnText] = useState("Enable Dark Mode")
-
-        const toggle = ()=> {
-            if(myStyle.color === 'black'){
-                setmyStyle({
-                    color: 'white',
-                    backgroundColor: 'black'
-            })
-            setBtnText("Enable light mode")
-        }
-            else{
-                setmyStyle({
-                    color: 'black',
-                    backgroundColor: 'white'
-            })
-            setBtnText("Enable Dark mode")
-            }
-        }
+        // const [btnText, setBtnText] = useState("Enable Dark Mode")
+ 
+        // const toggle = ()=> {
+        //     if(myStyle.color === 'black'){
+        //         setmyStyle({
+        //             color: 'white',
+        //             backgroundColor: 'black'
+        //     })
+        //     setBtnText("Enable light mode")
+        // }
+        //     else{
+        //         setmyStyle({
+        //             color: 'black',
+        //             backgroundColor: 'white'
+        //     })
+        //     setBtnText("Enable Dark mode")
+        //     }
+        // }
 
         return (
             <>
@@ -68,9 +70,9 @@ export default function About() {
                         </div>
                     </div>
                 </div>
-                <div className="container">
+                {/* <div className="container">
                     <button onClick={toggle} type="button" className="btn btn-primary my-3">{btnText}</button>
-                </div>
+                </div> */}
 
             </div>
             </>
